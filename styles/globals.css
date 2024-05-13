@@ -7,7 +7,7 @@
 }
 
 main {
-  @apply flex flex-col;
+  @apply flex flex-col p-16;
 }
 
 h1 {
@@ -23,7 +23,7 @@ h3 {
 }
 
 p {
-  @apply py-1;
+  @apply py-2;
 }
 
 button {
