@@ -7,5 +7,25 @@
 }
 
 main {
-  @apply flex flex-col md:flex-row;
+  @apply flex flex-col;
+}
+
+h1 {
+  @apply text-5xl pb-6 pt-2;
+}
+
+h2 {
+  @apply text-4xl pb-4 pt-1;
+}
+
+h3 {
+  @apply text-3xl pb-3 pt-1;
+}
+
+p {
+  @apply py-1;
+}
+
+button {
+  @apply bg-emerald-500 p-2 rounded max-w-96 hover:bg-emerald-200 hover:text-black transition-all;
 }
