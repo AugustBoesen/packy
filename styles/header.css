@@ -1,4 +1,13 @@
 .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.header-logo {
+  margin-left: 1.5rem;
   height: 3rem;
   font-size: 3rem;
   font-weight: 900;
@@ -9,6 +18,10 @@
   margin-top: 1rem;
 }
 
-.header-text {
-  margin-left: 1.5rem;
+.nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 1.25rem;
+  margin-top: 1rem;
 }
