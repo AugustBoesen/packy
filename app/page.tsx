@@ -38,12 +38,12 @@ export default function Index() {
           Packy is a visual tool designed for developers of all skill levels to
           figure out the desired development tools for a project.
         </p>
-        <p className='w-[36rem] mb-[5vh]'>
+        <p className='w-[36rem] mb-[3vh]'>
           It guides you through the basic steps for creating your desired
           application, taking into account both essential and quality-of-life
           tools.
         </p>
-        <h2 className='mb-[5vh] text-center w-full italic bg-gradient-to-r from-emerald-400 via-green-200 to-indigo-200 inline-block text-transparent bg-clip-text'>
+        <h2 className='mb-[3vh] text-center w-full italic bg-gradient-to-r from-emerald-400 via-green-200 to-indigo-200 inline-block text-transparent bg-clip-text'>
           Shape your vision.
         </h2>
         <Link
