@@ -3,10 +3,8 @@ import jsonData from '../db/packy.json';
 
 //luodaan interface datan tietoja varten jossa data tyypitetään
 interface Item {
-  code: string;
-  id: number;
-  name: string;
-  description: string;
+  contentId: number;
+  currentContent: [{ id: number; name: string; description: string }];
 }
 
 //määritellään muuttuja parseData joka on tyyppiä Item[], sisältää item tyyppisiä objekteja
@@ -19,7 +17,8 @@ function getItemByCode(code: string): Item[] {
   //käydään läpi parsedData taulukon alkioiden code propertyt ja jos ne ovat samankaltaisia kuin 'app'
   //ne pushataan i taulukkoon.
   parsedData.forEach((item) => {
-    if (item.code === 'app') {
+    // TÄMÄ NUMERO PITÄÄ SAADA INTERAKTIIVISENA MINDMAPIN PAGETSX:STÄ
+    if (item.contentId === 3) {
       i.push(item);
     }
   });
@@ -34,14 +33,17 @@ export default function ParsedDataComponent() {
 
   //määritellään funktio renderData joka ottaa parametrikseen item[] tyyppisen data objektin
   function renderData(data: Item[]) {
-    //funktio palauttaa listan jokaisen nimen ja descriptionin data parametrista
     return (
       <ul>
         {data.map((item) => (
-          <li key={item.id}>
-            <strong>{item.name}</strong>
-            <br />
-            <strong>{item.description}</strong>
+          <li key={item.currentContent[0].id}>
+            {item.currentContent.map((content, i) => (
+              <div key={content.id}>
+                <strong>{content.name}</strong>
+                <br />
+                <strong>{content.description}</strong>
+              </div>
+            ))}
           </li>
         ))}
       </ul>
