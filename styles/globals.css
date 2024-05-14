@@ -3,9 +3,33 @@
 @tailwind utilities;
 
 :root {
-  @apply bg-black text-white;
+  @apply bg-black text-white overflow-hidden;
 }
 
 main {
-  @apply flex flex-col md:flex-row;
+  @apply flex flex-col p-16;
+}
+
+h1 {
+  @apply text-5xl pb-6 pt-2;
+}
+
+h2 {
+  @apply text-4xl pb-4 pt-1;
+}
+
+h3 {
+  @apply text-3xl pb-3 pt-1;
+}
+
+p {
+  @apply py-2;
+}
+
+.indexbtn {
+  @apply z-50 shadow-inner mx-32 my-3 hover:mx-0 text-center py-4 px-24 text-xl rounded-lg hover:font-bold hover:text-black transition-all duration-300 hover:border-x-2;
+  --tw-shadow: inset 0 2px 6px 0 rgb(0 0 0 / 0.6);
+  --tw-shadow-colored: inset 0 2px 4px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
