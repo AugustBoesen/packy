@@ -3,21 +3,19 @@ import '../styles/header.css';
 export default function Header() {
   return (
     <header className="header">
-      <div className="header-logo">PACKY</div>
+      <div className="header-logo">
+        {' '}
+        <a href="/">PACKY</a>
+      </div>
       <ul className="nav-list">
         <li>
           <h3>
+            <a href="/mindmap">Start</a>
+          </h3>
+        </li>
+        <li>
+          <h3>
             <a href="/about">About</a>
-          </h3>
-        </li>
-        <li>
-          <h3>
-            <a href="#">Lorum</a>
-          </h3>
-        </li>
-        <li>
-          <h3>
-            <a href="#">Ipsum</a>
           </h3>
         </li>
         <li>
