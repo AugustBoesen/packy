@@ -7,13 +7,15 @@ const config: Config = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
-    },
+      animation: {
+        'spin-slow': 'spin 120s linear infinite',
+        'pulse-slow': 'pulse 10s linear infinite',
+        'bounce-slow': 'bounce 90s linear infinite',
+      }
+    }
+
   },
   plugins: [],
 };

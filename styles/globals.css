@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  @apply bg-black text-white;
+  @apply bg-black text-white overflow-hidden;
 }
 
 main {
@@ -26,6 +26,6 @@ p {
   @apply py-2;
 }
 
-button {
-  @apply bg-emerald-500 p-2 rounded max-w-96 hover:bg-emerald-200 hover:text-black transition-all;
+.indexbtn {
+  @apply z-50 shadow-2xl mx-32 my-4 hover:mx-0 text-center py-4 px-24 text-xl rounded-lg hover:text-black transition-all duration-300;
 }
