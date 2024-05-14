@@ -1,14 +1,14 @@
-/* header.css */
 .header {
-  height: 4rem;
-  font-size: 4rem;
+  height: 3rem;
+  font-size: 3rem;
   font-weight: 900;
   text-shadow: 1px 1px 0 #10b981, 2px 2px 0 #10b981, 3px 3px 0 #10b981,
     4px 4px 0 #10b981, 5px 5px 0 #10b981;
   display: flex;
   align-items: center;
+  margin-top: 1rem;
 }
 
 .header-text {
-  margin-left: 3.5rem;
+  margin-left: 1.5rem;
 }
