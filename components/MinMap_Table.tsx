@@ -35,8 +35,8 @@ export default function ParsedDataComponent({ handleDatafromMinMap }: any) {
       setCurrentDescription(content.description);
 
       currentContentId = content.id;
-      console.log('id on minmapissa: ' + currentContentId);
-      console.log(JSON.stringify(content)); // Pass content directly
+      // console.log('id on minmapissa: ' + currentContentId);
+      // console.log(JSON.stringify(content)); // Pass content directly
       handleDatafromMinMap(content); // Pass content here
     };
   }
