@@ -1,6 +1,7 @@
 [
   {
     "contentId": 0,
+    "info": "Choose what kinda application you wanna use",
     "currentContent": [
       {
         "code": "AppType",
@@ -22,181 +23,184 @@
       }
     ]
   },
-{
-  "contentId": 1,
-  "currentContent": [
-    {
-      "code": "FeLang",
-      "id": 1,
-      "name": "HTML",
-      "description": "Peruskieli, jota käytetään sivujen rakentamiseen ja sisällön merkitsemiseen."
-    },
-    {
-      "code": "FeLang",
-      "id": 2,
-      "name": "CSS",
-      "description": "Kieli, jota käytetään sivustojen tyylien ja ulkoasujen määrittämiseen."
-    },
-    {
-      "code": "FeLang",
-      "id": 3,
-      "name": "JavaScript",
-      "description": "Käyttöliittymäkieli, jota käytetään interaktiivisten elementtien lisäämiseen sivuille."
-    },
-    {
-      "code": "FeLang",
-      "id": 4,
-      "name": "TypeScript",
-      "description": "JavaScriptin supersetti, joka lisää staattisen tyypityksen ja muita ominaisuuksia JavaScriptiin. TypeScript tarjoaa parempaa koodin ennustettavuutta ja ylläpidettävyyttä suurissa projekteissa"
-    }
-  ]
-},
+  {
+    "contentId": 1,
+    "info": "choose what code language you want to use",
+    "currentContent": [
+      {
+        "code": "FeLang",
+        "id": 1,
+        "name": "HTML",
+        "description": "Peruskieli, jota käytetään sivujen rakentamiseen ja sisällön merkitsemiseen."
+      },
+      {
+        "code": "FeLang",
+        "id": 2,
+        "name": "CSS",
+        "description": "Kieli, jota käytetään sivustojen tyylien ja ulkoasujen määrittämiseen."
+      },
+      {
+        "code": "FeLang",
+        "id": 3,
+        "name": "JavaScript",
+        "description": "Käyttöliittymäkieli, jota käytetään interaktiivisten elementtien lisäämiseen sivuille."
+      },
+      {
+        "code": "FeLang",
+        "id": 4,
+        "name": "TypeScript",
+        "description": "JavaScriptin supersetti, joka lisää staattisen tyypityksen ja muita ominaisuuksia JavaScriptiin. TypeScript tarjoaa parempaa koodin ennustettavuutta ja ylläpidettävyyttä suurissa projekteissa"
+      }
+    ]
+  },
 
+  {
+    "contentId": 2,
+    "info": "Choose what framework you wanna use",
+    "currentContent": [
+      {
+        "code": "FeFrame",
+        "id": 1,
+        "name": "React.js",
+        "description": "Käyttäjäliittymän rakentamiseen kehitetty JavaScript-kirjasto, joka tarjoaa komponenttipohjaisen lähestymistavan."
+      },
+      {
+        "code": "FeFrame",
+        "id": 2,
+        "name": "Vue.js",
+        "description": "Progressiivinen JavaScript-kirjasto, joka on helppo oppia ja integroida muihin projekteihin, tarjoaa selkeän ja joustavan syntaksin"
+      },
+      {
+        "code": "FeFrame",
+        "id": 3,
+        "name": "Angular.js",
+        "description": "Kokonainen kehys sovellusten rakentamiseen, joka tarjoaa monipuoliset ominaisuudet, kuten komponentit, reititys ja tilanhallinta."
+      }
+    ]
+  },
 
+  {
+    "contentId": 3,
+    "info": "Choose hosting service",
+    "currentContent": [
+      {
+        "code": "FeHost",
+        "id": 1,
+        "name": "Netlify",
+        "description": "Yksinkertainen ja tehokas hosting-palvelu, joka tarjoaa staattisten sivustojen hostingia, CI/CD-palveluita ja muita ominaisuuksia."
+      },
+      {
+        "code": "FeHost",
+        "id": 2,
+        "name": "Heroku",
+        "description": "Alusta, joka tarjoaa helpon tavan julkaista sekä frontend- että backend-sovelluksia."
+      },
+      {
+        "code": "FeHost",
+        "id": 3,
+        "name": "Vercel",
+        "description": "Palvelu, joka tarjoaa nopean ja helpon tavan julkaista frontend-sovelluksia, erityisesti Next.js-sovelluksia."
+      }
+    ]
+  },
 
-{
-  "contentId": 2,
-  "currentContent": [
-    {
-      "code": "FeFrame",
-      "id": 1,
-      "name": "React.js",
-      "description": "Käyttäjäliittymän rakentamiseen kehitetty JavaScript-kirjasto, joka tarjoaa komponenttipohjaisen lähestymistavan."
-    },
-    {
-      "code": "FeFrame",
-      "id": 2,
-      "name": "Vue.js",
-      "description": "Progressiivinen JavaScript-kirjasto, joka on helppo oppia ja integroida muihin projekteihin, tarjoaa selkeän ja joustavan syntaksin"
-    },
-    {
-      "code": "FeFrame",
-      "id": 3,
-      "name": "Angular.js",
-      "description": "Kokonainen kehys sovellusten rakentamiseen, joka tarjoaa monipuoliset ominaisuudet, kuten komponentit, reititys ja tilanhallinta."
-    }
-  ]
-},
+  {
+    "contentId": 4,
+    "info": "Choose what back-end language you want to use",
+    "currentContent": [
+      {
+        "code": "BeLang",
+        "id": 1,
+        "name": "JavaScript/Node.js",
+        "description": "Suosittu kieli backend-kehityksessä, joka perustuu JavaScriptiin ja toimii V8 JavaScript -moottorilla. Node.js mahdollistaa nopean ja skaalautuvan serverin kehittämisen."
+      },
+      {
+        "code": "BeLang",
+        "id": 2,
+        "name": "Python",
+        "description": "Yleiskäyttöinen ohjelmointikieli, jota käytetään laajasti backend-sovellusten kehityksessä. Pythonilla on suuri määrä web-kehitykseen tarkoitettuja kehyksiä, kuten Django ja Flask."
+      },
+      {
+        "code": "BeLang",
+        "id": 3,
+        "name": "Java",
+        "description": "Tehokas ja monipuolinen ohjelmointikieli, jota käytetään laajasti yritystason backend-sovelluksissa. Java-kehitykseen käytetään usein Spring Frameworkia."
+      }
+    ]
+  },
 
-{
-  "contentId": 3,
-  "currentContent": [
-    {
-      "code": "FeHost",
-      "id": 1,
-      "name": "Netlify",
-      "description": "Yksinkertainen ja tehokas hosting-palvelu, joka tarjoaa staattisten sivustojen hostingia, CI/CD-palveluita ja muita ominaisuuksia."
-    },
-    {
-      "code": "FeHost",
-      "id": 2,
-      "name": "Heroku",
-      "description": "Alusta, joka tarjoaa helpon tavan julkaista sekä frontend- että backend-sovelluksia."
-    },
-    {
-      "code": "FeHost",
-      "id": 3,
-      "name": "Vercel",
-      "description": "Palvelu, joka tarjoaa nopean ja helpon tavan julkaista frontend-sovelluksia, erityisesti Next.js-sovelluksia."
-    }
-  ]
-},
+  {
+    "contentId": 5,
+    "info": "choose what back-end framework you want to use",
+    "currentContent": [
+      {
+        "code": "BeFrame",
+        "id": 1,
+        "name": "Django",
+        "description": "Python-pohjainen web-sovelluskehys, joka tarjoaa nopean ja tehokkaan tavan rakentaa turvallisia ja skaalautuvia web-sovelluksia."
+      },
+      {
+        "code": "BeFrame",
+        "id": 2,
+        "name": "Flask",
+        "description": "Kevyt Python-web-sovelluskehys, joka tarjoaa joustavan ja helpon tavan rakentaa web-sovelluksia"
+      },
+      {
+        "code": "BeFrame",
+        "id": 3,
+        "name": "Express.js",
+        "description": "Kevyt ja joustava web-sovelluskehys Node.js:lle. Express.js tarjoaa perustyökalut backend-sovellusten kehittämiseen, kuten reitityksen ja middleware-ominaisuudet."
+      }
+    ]
+  },
 
-{
-  "contentId": 4,
-  "currentContent": [
-    {
-      "code": "BeLang",
-      "id": 1,
-      "name": "JavaScript/Node.js",
-      "description": "Suosittu kieli backend-kehityksessä, joka perustuu JavaScriptiin ja toimii V8 JavaScript -moottorilla. Node.js mahdollistaa nopean ja skaalautuvan serverin kehittämisen."
-    },
-    {
-      "code": "BeLang",
-      "id": 2,
-      "name": "Python",
-      "description": "Yleiskäyttöinen ohjelmointikieli, jota käytetään laajasti backend-sovellusten kehityksessä. Pythonilla on suuri määrä web-kehitykseen tarkoitettuja kehyksiä, kuten Django ja Flask."
-    },
-    {
-      "code": "BeLang",
-      "id": 3,
-      "name": "Java",
-      "description": "Tehokas ja monipuolinen ohjelmointikieli, jota käytetään laajasti yritystason backend-sovelluksissa. Java-kehitykseen käytetään usein Spring Frameworkia."
-    }
-  ]
-},
+  {
+    "contentId": 6,
+    "info": "Choose back-end hosting service",
+    "currentContent": [
+      {
+        "code": "BeHost",
+        "id": 1,
+        "name": "Heroku",
+        "description": " Alusta, joka tarjoaa helpon tavan julkaista sekä frontend- että backend-sovelluksia."
+      },
+      {
+        "code": "BeHost",
+        "id": 2,
+        "name": "Amazon Web Services (AWS)",
+        "description": "Pilvipalvelualusta, joka tarjoaa laajan valikoiman palveluita, kuten EC2 (Elastic Compute Cloud) backend-sovellusten hostaamiseen."
+      },
+      {
+        "code": "BeHost",
+        "id": 3,
+        "name": "Microsoft Azure",
+        "description": "Pilvipalvelualusta, joka tarjoaa hosting-palveluita erilaisille backend-sovelluksille, kuten Azure App Service."
+      }
+    ]
+  },
 
-{
-  "contentId": 5,
-  "currentContent": [
-    {
-      "code": "BeFrame",
-      "id": 1,
-      "name": "Django",
-      "description": "Python-pohjainen web-sovelluskehys, joka tarjoaa nopean ja tehokkaan tavan rakentaa turvallisia ja skaalautuvia web-sovelluksia."
-    },
-    {
-      "code": "BeFrame",
-      "id": 2,
-      "name": "Flask",
-      "description": "Kevyt Python-web-sovelluskehys, joka tarjoaa joustavan ja helpon tavan rakentaa web-sovelluksia"
-    },
-    {
-      "code": "BeFrame",
-      "id": 3,
-      "name": "Express.js",
-      "description": "Kevyt ja joustava web-sovelluskehys Node.js:lle. Express.js tarjoaa perustyökalut backend-sovellusten kehittämiseen, kuten reitityksen ja middleware-ominaisuudet."
-    }
-  ]
-},
-
-
-{
-  "contentId": 6,
-  "currentContent": [
-    {
-      "code": "BeHost",
-      "id": 1,
-      "name": "Heroku",
-      "description": " Alusta, joka tarjoaa helpon tavan julkaista sekä frontend- että backend-sovelluksia."
-    },
-    {
-      "code": "BeHost",
-      "id": 2,
-      "name": "Amazon Web Services (AWS)",
-      "description": "Pilvipalvelualusta, joka tarjoaa laajan valikoiman palveluita, kuten EC2 (Elastic Compute Cloud) backend-sovellusten hostaamiseen."
-    },
-    {
-      "code": "BeHost",
-      "id": 3,
-      "name": "Microsoft Azure",
-      "description": "Pilvipalvelualusta, joka tarjoaa hosting-palveluita erilaisille backend-sovelluksille, kuten Azure App Service."
-    }
-  ]
-},
-
-{
-  "contentId": 7,
-  "currentContent": [
-    {
-      "code": "Databases",
-      "id": 1,
-      "name": "MySQL",
-      "description": "This is a MySQL database"
-    },
-    {
-      "code": "Databases",
-      "id": 2,
-      "name": "PostgreSQL",
-      "description": "This is a PostgreSQL database"
-    },
-    {
-      "code": "Databases",
-      "id": 3,
-      "name": "MongoDB",
-      "description": "This is a MongoDB database"
-    }
-  ]
-}
-
+  {
+    "contentId": 7,
+    "info": "choose your database",
+    "currentContent": [
+      {
+        "code": "Databases",
+        "id": 1,
+        "name": "MySQL",
+        "description": "This is a MySQL database"
+      },
+      {
+        "code": "Databases",
+        "id": 2,
+        "name": "PostgreSQL",
+        "description": "This is a PostgreSQL database"
+      },
+      {
+        "code": "Databases",
+        "id": 3,
+        "name": "MongoDB",
+        "description": "This is a MongoDB database"
+      }
+    ]
+  }
 ]
