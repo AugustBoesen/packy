@@ -74,15 +74,15 @@ export default function ParsedDataComponent({ handleDatafromMinMap }: any) {
           pbCurrentDescription={currentDescription}
           clearDesc={clearDescription}
         />
-        <ul className="flex flex-row justify-center w-[90vw] bg-slate-900">
+        <ul className='flex flex-row  min-h-[40vh] justify-center w-[90vw] bg-slate-900'>
           {data.map((item) => (
             <li key={item.currentContent[0].id}>
               {item.currentContent.map((content, i) => (
                 <div key={content.id}>
-                  <div className="w-[45vw] h-24 flex justify-center">
+                  <div className='w-[45vw] h-24 flex justify-center'>
                     <button
                       onClick={selectOption(content)}
-                      className=" w-40 font-bold border p-3 my-5 transition-all rounded-lg hover:bg-slate-200 hover:text-black hover:border-double hover:border-x-8 hover:border-slate-400 text-xl"
+                      className=' w-96 hover:w-full font-bold border p-3 my-5 transition-all rounded-lg hover:bg-slate-200 hover:text-black hover:border-double hover:border-x-8 hover:border-slate-400 text-xl'
                     >
                       {content.name}
                     </button>
@@ -91,8 +91,8 @@ export default function ParsedDataComponent({ handleDatafromMinMap }: any) {
               ))}
             </li>
           ))}
-          <div className="[45vw]">
-            <p className="flex bg-slate-800 w-[40vw] h-full mt-auto text-center justify-center">
+          <div className='[45vw]'>
+            <p className='flex bg-slate-800 w-[40vw] h-full mt-auto text-center justify-center'>
               {currentDescription}
             </p>
           </div>
