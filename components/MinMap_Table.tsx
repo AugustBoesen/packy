@@ -12,7 +12,9 @@ let currentContentId = 2;
 //luodaan interface datan tietoja varten jossa data tyypitetään
 interface Item {
   contentId: number;
-  currentContent: [{ id: number; name: string; description: string }];
+  currentContent: [
+    { code: string; id: number; name: string; description: string }
+  ];
 }
 
 //määritellään muuttuja parseData joka on tyyppiä Item[], sisältää item tyyppisiä objekteja
@@ -32,8 +34,8 @@ export default function ParsedDataComponent({ handleDatafromMinMap }: any) {
       setCurrentDescription(content.description);
 
       currentContentId = content.id;
-      console.log('id on minmapissa: ' + currentContentId);
-      console.log(JSON.stringify(content)); // Pass content directly
+      // console.log('id on minmapissa: ' + currentContentId);
+      // console.log(JSON.stringify(content)); // Pass content directly
       handleDatafromMinMap(content); // Pass content here
     };
   }
