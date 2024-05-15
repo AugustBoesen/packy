@@ -3,16 +3,19 @@
     "contentId": 0,
     "currentContent": [
       {
+        "code": "AppType",
         "id": 1,
         "name": "Web App",
         "description": "This is a web app"
       },
       {
+        "code": "AppType",
         "id": 2,
         "name": "Mobile App",
         "description": "This is a mobile app"
       },
       {
+        "code": "AppType",
         "id": 3,
         "name": "Desktop App",
         "description": "This is a desktop app"
@@ -23,21 +26,25 @@
   "contentId": 1,
   "currentContent": [
     {
+      "code": "FeLang",
       "id": 1,
       "name": "HTML",
       "description": "Peruskieli, jota käytetään sivujen rakentamiseen ja sisällön merkitsemiseen."
     },
     {
+      "code": "FeLang",
       "id": 2,
       "name": "CSS",
       "description": "Kieli, jota käytetään sivustojen tyylien ja ulkoasujen määrittämiseen."
     },
     {
+      "code": "FeLang",
       "id": 3,
       "name": "JavaScript",
       "description": "Käyttöliittymäkieli, jota käytetään interaktiivisten elementtien lisäämiseen sivuille."
     },
     {
+      "code": "FeLang",
       "id": 4,
       "name": "TypeScript",
       "description": "JavaScriptin supersetti, joka lisää staattisen tyypityksen ja muita ominaisuuksia JavaScriptiin. TypeScript tarjoaa parempaa koodin ennustettavuutta ja ylläpidettävyyttä suurissa projekteissa"
