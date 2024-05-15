@@ -1,5 +1,11 @@
+/* eslint-disable react-hooks/rules-of-hooks */
+'use client';
+import { MouseEventHandler } from 'react';
+import React, { useState } from 'react';
 //importoidaan data
 import jsonData from '../db/packy.json';
+
+let currentContentId = 0;
 
 //luodaan interface datan tietoja varten jossa data tyypitetään
 interface Item {
@@ -17,43 +23,64 @@ function getItemByCode(code: string): Item[] {
   //käydään läpi parsedData taulukon alkioiden code propertyt ja jos ne ovat samankaltaisia kuin 'app'
   //ne pushataan i taulukkoon.
   parsedData.forEach((item) => {
-    // TÄMÄ NUMERO PITÄÄ SAADA INTERAKTIIVISENA MINDMAPIN PAGETSX:STÄ
-    if (item.contentId === 3) {
+    // Item.contentId:tä verrataan numeroon, joka saadaan määritteenä mindmapin page.tsx:stä
+    if (item.contentId === 1) {
       i.push(item);
     }
   });
   //Lopuksi palautetaan i taulukko
   return i;
 }
-
 //määritellään funktio ParsedDataComponent(), joka exportataan
-export default function ParsedDataComponent() {
+export default function ParsedDataComponent({ handleDatafromMinMap }: any) {
+  const [currentDescription, setCurrentDescription] = useState('');
+  const [currentlySelectedContent, setCurrentlySelectedContent] = useState({});
+  function selectOption(content: {
+    id: number;
+    name: string;
+    description: string;
+  }): MouseEventHandler<HTMLButtonElement> {
+    return (event) => {
+      setCurrentlySelectedContent(content);
+      setCurrentDescription(content.description);
+
+      currentContentId = content.id;
+      console.log('id on minmapissa: ' + currentContentId);
+      console.log(JSON.stringify(content)); // Pass content directly
+      handleDatafromMinMap(content); // Pass content here
+    };
+  }
   //määritellään muuttuja app, joka sisältää funktion getItemByCoden palautusarvon
   const app = getItemByCode('app');
 
   //määritellään funktio renderData joka ottaa parametrikseen item[] tyyppisen data objektin
   function renderData(data: Item[]) {
     return (
-      <ul>
+      <ul className='flex flex-row justify-center w-[90vw] bg-slate-900'>
         {data.map((item) => (
           <li key={item.currentContent[0].id}>
             {item.currentContent.map((content, i) => (
               <div key={content.id}>
-                <strong>{content.name}</strong>
-                <br />
-                <strong>{content.description}</strong>
+                <div className='w-[45vw] h-24 flex justify-center'>
+                  <button
+                    onClick={selectOption(content)}
+                    className=' w-40 font-bold border p-3 my-5 transition-all rounded-lg hover:bg-slate-200 hover:text-black hover:border-double hover:border-x-8 hover:border-slate-400 text-xl'
+                  >
+                    {content.name}
+                  </button>
+                </div>
               </div>
             ))}
           </li>
         ))}
+        <div className='[45vw]'>
+          <p className='flex bg-slate-800 w-[40vw] h-full mt-auto text-center justify-center'>
+            {currentDescription}
+          </p>
+        </div>
       </ul>
     );
   }
   //funktio ParsedDataComponent() palauttaa objektin joka sisältää tiedot joita renderData funktio palauttaa
-  return (
-    <div>
-      <h1>Application type</h1>
-      {app && renderData(app)}
-    </div>
-  );
+  return <div>{app && renderData(app)}</div>;
 }

@@ -1,7 +1,22 @@
-export default function Content() {
+'use client';
+import Modal from './MinMap_Table';
+import { useState } from 'react';
+
+export default function Content({ setCurrentContent }: any) {
+  const [datafromMinMap, setDatafromMinMap] = useState([]);
+  const handleDatafromMinMap = (newDatafromMinMap: any) => {
+    setDatafromMinMap(newDatafromMinMap);
+  };
+
+  const handleContentChange = (newContent: any) => {
+    setCurrentContent(newContent);
+  };
   return (
     <div>
-      <h1>Content</h1>
+      <Modal handleDatafromMinMap={handleDatafromMinMap} />
+      <button onClick={() => handleContentChange(datafromMinMap)}>
+        Click me
+      </button>
     </div>
   );
 }
