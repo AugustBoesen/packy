@@ -9,14 +9,13 @@ export default function Mindmap() {
     setCurrentContent(JSON.stringify(newContent));
   };
   return (
-    <main>
+    <>
       <>
         <Content
           currentContent={currentContent}
           setCurrentContent={handleContentChange}
         />
-        <p className='bg-green-500'>{currentContent}</p>
       </>
-    </main>
+    </>
   );
 }

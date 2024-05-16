@@ -1,9 +1,15 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 'use client';
 import React, { useState } from 'react';
+import { correctAmount } from './content';
+import { setCorrectAmount } from './content';
 
-function ProgressBar({ pbcurrentStep, pbsetCurrentStep, clearDesc }: any) {
-  const [currentStep, setCurrentStep] = useState(0);
+function ProgressBar({
+  pbcurrentStep,
+  pbsetCurrentStep,
+  clearDesc,
+  pbfinishSignal,
+}: any) {
   // Tässä määritellään tila missä progres bar on ja se käytää useStatea ja se alkaa tilasta 1
 
   const maxSteps = 7; // Tämä muuttuja määrittää monta steppiä on yhteensä
@@ -25,9 +31,9 @@ function ProgressBar({ pbcurrentStep, pbsetCurrentStep, clearDesc }: any) {
 
   return (
     // pallojne ja baarin div
-    <div className=' w-full flex flex-col'>
+    <div className=" w-full flex flex-col">
       {/* tästä alkaa pallojen div */}
-      <div className=' flex -mb-6 w-full justify-between'>
+      <div className=" flex -mb-6 w-full justify-between">
         {circles.map((step) => (
           <div
             key={step}
@@ -42,25 +48,34 @@ function ProgressBar({ pbcurrentStep, pbsetCurrentStep, clearDesc }: any) {
         ))}
       </div>
       {/* tästä alkaa baarin div */}
-      <div className=' bg-gray-200 rounded-full dark:bg-gray-700 w-full'>
+      <div className=" bg-gray-200 rounded-full dark:bg-gray-700 w-full">
         <div
-          className='bg-emerald-500 py-2 rounded-full transition-all ease-in-out duration-300'
+          className="bg-emerald-500 py-2 rounded-full transition-all ease-in-out duration-300"
           style={{ width: `${(pbcurrentStep / barSteps) * 100}%` }}
         ></div>
       </div>
-      <div className='flex justify-between mt-2'>
+      <div className="flex justify-between mt-2">
         {' '}
         <button
-          className='z-50 absolute left-4 bottom-[50vh] h-20 w-20 rounded-full bg-emerald-500 text-white hover:bg-white hover:text-black transition-all hover:scale-125 duration-300'
+          hidden={pbcurrentStep <= 0}
+          className="z-50 absolute left-4 bottom-[50vh] h-20 w-20 rounded-full bg-emerald-500 text-white hover:bg-white hover:text-black transition-all hover:scale-125 duration-300"
           onClick={handlePreviousStep}
         >
           Previous
         </button>
         <button
-          className='z-50 absolute right-4 bottom-[50vh] h-20 w-20 rounded-full bg-emerald-500 text-white hover:bg-white hover:text-black transition-all hover:scale-125 duration-300'
-          onClick={handleNextStep}
+          hidden={correctAmount === false}
+          className="z-50 absolute right-4 bottom-[50vh] h-20 w-20 rounded-full bg-emerald-500 text-white hover:bg-white hover:text-black transition-all hover:scale-125 duration-300"
+          onClick={() => {
+            if (pbcurrentStep >= barSteps) {
+              pbfinishSignal();
+            } else {
+              handleNextStep();
+              setCorrectAmount(false);
+            }
+          }}
         >
-          Next
+          {pbcurrentStep === barSteps ? 'Finish' : 'Next'}
         </button>
       </div>
     </div>
