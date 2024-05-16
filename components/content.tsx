@@ -5,6 +5,14 @@ import toast from 'react-hot-toast';
 
 let chosenArray: any[] = [];
 
+let finishSignal: boolean = false;
+
+function setfinishSignal() {
+  // Tähänkin voi laittaa filttereitä
+  finishSignal = true;
+  console.log('NYT TOIMII');
+}
+
 export default function Content({ setCurrentContent }: any) {
   const [datafromMinMap, setDatafromMinMap] = useState([]);
   const handleDatafromMinMap = (newDatafromMinMap: any) => {
@@ -32,10 +40,13 @@ export default function Content({ setCurrentContent }: any) {
 
   return (
     <div>
-      <Modal handleDatafromMinMap={handleDatafromMinMap} />
-      <div className="flex w-full justify-center text-center rounded-fullh-24">
+      <Modal
+        handleDatafromMinMap={handleDatafromMinMap}
+        mmfinishSignal={setfinishSignal}
+      />
+      <div className='flex w-full justify-center text-center rounded-fullh-24'>
         <button
-          className="rounded-full h-24 w-24 -mt-12 bg-emerald-500"
+          className='rounded-full h-24 w-24 -mt-12 bg-emerald-500'
           onClick={() => handleContentChange(datafromMinMap)}
         >
           Add to plan

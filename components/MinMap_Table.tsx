@@ -27,10 +27,21 @@ interface Item {
 const parsedData: Item[] = jsonData as Item[];
 
 //määritellään funktio ParsedDataComponent(), joka exportataan
-export default function ParsedDataComponent({ handleDatafromMinMap }: any) {
+export default function ParsedDataComponent({
+  handleDatafromMinMap,
+  mmfinishSignal,
+}: {
+  handleDatafromMinMap: any;
+  mmfinishSignal: () => void | any;
+}) {
   let [currentDescription, setCurrentDescription] = useState('');
   let [currentlySelectedContent, setCurrentlySelectedContent] = useState({});
   let [currentBackground, setCurrentBackground] = useState('');
+
+  function setfinishSignal() {
+    // tähän voi laittaa filttereitä
+    mmfinishSignal();
+  }
 
   function selectOption(content: {
     id: number;
@@ -81,8 +92,8 @@ export default function ParsedDataComponent({ handleDatafromMinMap }: any) {
         <ProgressBar
           pbcurrentStep={currentStep}
           pbsetCurrentStep={setCurrentStep}
-          pbCurrentDescription={currentDescription}
           clearDesc={clearDescription}
+          pbfinishSignal={setfinishSignal}
         />
         <ul className='flex flex-row min-h-[50vh] w-[95vw] mt-6 justify-center bg-slate-900 shadow-inner border-l-4 border-slate-800 border-t-4'>
           {data.map((item) => (

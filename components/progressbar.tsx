@@ -2,8 +2,12 @@
 'use client';
 import React, { useState } from 'react';
 
-function ProgressBar({ pbcurrentStep, pbsetCurrentStep, clearDesc }: any) {
-  const [currentStep, setCurrentStep] = useState(0);
+function ProgressBar({
+  pbcurrentStep,
+  pbsetCurrentStep,
+  clearDesc,
+  pbfinishSignal,
+}: any) {
   // Tässä määritellään tila missä progres bar on ja se käytää useStatea ja se alkaa tilasta 1
 
   const maxSteps = 7; // Tämä muuttuja määrittää monta steppiä on yhteensä
@@ -57,10 +61,16 @@ function ProgressBar({ pbcurrentStep, pbsetCurrentStep, clearDesc }: any) {
           Previous
         </button>
         <button
+          onClick={() => {
+            if (pbcurrentStep >= barSteps) {
+              pbfinishSignal();
+            } else {
+              handleNextStep();
+            }
+          }}
           className='z-50 absolute right-4 bottom-[50vh] h-20 w-20 rounded-full bg-emerald-500 text-white hover:bg-white hover:text-black transition-all hover:scale-125 duration-300'
-          onClick={handleNextStep}
         >
-          Next
+          {pbcurrentStep === barSteps ? 'Finish' : 'Next'}
         </button>
       </div>
     </div>
