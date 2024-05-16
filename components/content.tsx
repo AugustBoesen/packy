@@ -1,6 +1,7 @@
 'use client';
 import Modal from './MinMap_Table';
 import { useState } from 'react';
+import toast from 'react-hot-toast';
 
 let chosenArray: any[] = [];
 
@@ -11,6 +12,7 @@ export default function Content({ setCurrentContent }: any) {
   };
 
   const handleContentChange = (newContent: any) => {
+    toast.success('Saved to list');
     setCurrentContent(newContent);
     if (newContent.id !== undefined) {
       const existingObjectIndex = chosenArray.findIndex(
@@ -31,9 +33,9 @@ export default function Content({ setCurrentContent }: any) {
   return (
     <div>
       <Modal handleDatafromMinMap={handleDatafromMinMap} />
-      <div className='flex w-full justify-center text-center rounded-fullh-24'>
+      <div className="flex w-full justify-center text-center rounded-fullh-24">
         <button
-          className='rounded-full h-24 w-24 -mt-12 bg-emerald-500'
+          className="rounded-full h-24 w-24 -mt-12 bg-emerald-500"
           onClick={() => handleContentChange(datafromMinMap)}
         >
           Add to plan
