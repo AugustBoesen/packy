@@ -28,7 +28,7 @@ export default function RootLayout({
           height={1080}
           className="blur-3xl opacity-50 absolute -z-50 max-h-[90vh]"
         />
-        <Toaster position="bottom-left" />
+        <Toaster position="top-center" />
         {children}
         <Footer />
       </body>
