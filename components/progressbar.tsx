@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import { correctAmount } from './content';
 import { setCorrectAmount } from './content';
-import toast from 'react-hot-toast';
 
 function ProgressBar({
   pbcurrentStep,
