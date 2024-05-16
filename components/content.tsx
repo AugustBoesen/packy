@@ -5,6 +5,13 @@ import toast from 'react-hot-toast';
 
 let chosenArray: any[] = [];
 
+export let correctAmount: boolean = false;
+
+export function setCorrectAmount(value: boolean) {
+  correctAmount = value;
+}
+console.log(correctAmount);
+
 export default function Content({ setCurrentContent }: any) {
   const [datafromMinMap, setDatafromMinMap] = useState([]);
   const handleDatafromMinMap = (newDatafromMinMap: any) => {
@@ -26,7 +33,9 @@ export default function Content({ setCurrentContent }: any) {
         chosenArray[existingObjectIndex] = newContent;
       }
     }
+    correctAmount = true;
 
+    console.log(correctAmount);
     console.log(chosenArray);
   };
 
@@ -35,7 +44,7 @@ export default function Content({ setCurrentContent }: any) {
       <Modal handleDatafromMinMap={handleDatafromMinMap} />
       <div className="flex w-full justify-center text-center rounded-fullh-24">
         <button
-          className="rounded-full h-24 w-24 -mt-12 bg-emerald-500"
+          className="rounded-full z-50 h-32 w-32 -mt-80 font-bold bg-teal-500 hover:scale-125 transition-all duration-500 border hover:border-dashed hover:border-slate-300 hover:bg-teal-200 hover:text-black"
           onClick={() => handleContentChange(datafromMinMap)}
         >
           Add to plan
