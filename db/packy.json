@@ -1,230 +1,230 @@
 [
   {
     "contentId": 0,
-    "info": "Choose what kinda application you wanna make:",
+    "info": "Choose an application type",
     "currentContent": [
       {
         "code": "AppType",
         "id": 1,
         "name": "Web App",
-        "description": "This is a web app",
-        "image": "./webApp.png"
+        "description": "A web app can usually be accessed through internet browsers and require no initial installing from users",
+        "image": "/./webApp.png"
       },
       {
         "code": "AppType",
         "id": 2,
         "name": "Mobile App",
-        "description": "This is a mobile app",
-        "image": "./mobileApp.png"
+        "description": "Mobile apps can be primarily used in mobile platforms",
+        "image": "/./mobileApp.png"
       },
       {
         "code": "AppType",
         "id": 3,
         "name": "Desktop App",
-        "description": "This is a desktop app",
-        "image": "./desktopApp.png"
+        "description": "Desktop apps are usually installed for local usage",
+        "image": "/./desktopApp.png"
       }
     ]
   },
   {
     "contentId": 1,
-    "info": "Choose code language:",
+    "info": "Choose a code language:",
     "currentContent": [
       {
         "code": "FeLang",
         "id": 1,
-        "name": "HTML",
-        "description": "Fundamental language for structuring web pages and content.",
-        "image": "./html.png"
+        "name": "Python",
+        "description": "Language used for scripting and automation.",
+        "image": "/./html.png"
       },
       {
         "code": "FeLang",
         "id": 2,
-        "name": "CSS",
-        "description": "Language used for styling and designing websites.",
-        "image": "./css.png"
+        "name": "Assembly",
+        "description": "Are you insane?",
+        "image": "/./css.png"
       },
       {
         "code": "FeLang",
         "id": 3,
         "name": "JavaScript",
         "description": "Interactive language for adding dynamic elements to web pages.",
-        "image": "./javascript.png"
+        "image": "/./javascript.png"
       },
       {
         "code": "FeLang",
         "id": 4,
         "name": "TypeScript",
         "description": "Superset of JavaScript offering enhanced predictability and maintainability for large projects.",
-        "image": "./typescript.png"
+        "image": "/./typescript.png"
       }
     ]
   },
 
   {
     "contentId": 2,
-    "info": "Choose frontend framework:",
+    "info": "Choose a frontend framework",
     "currentContent": [
       {
         "code": "FeFrame",
         "id": 1,
         "name": "React.js",
         "description": "React.js is library for building user interfaces with a component-based approach.",
-        "image": "./reactjs.png"
+        "image": "/./reactjs.png"
       },
       {
         "code": "FeFrame",
         "id": 2,
         "name": "Vue.js",
         "description": "Vue.js progressive JavaScript framework known for its simplicity and flexibility.",
-        "image": "./vuejs.png"
+        "image": "/./vuejs.png"
       },
       {
         "code": "FeFrame",
         "id": 3,
         "name": "Angular.js",
         "description": "Angular.js is comprehensive framework for building applications with features like components, routing, and state management.",
-        "image": "./angular.png"
+        "image": "/./angular.png"
       }
     ]
   },
 
   {
     "contentId": 3,
-    "info": "Choose hosting service:",
+    "info": "Choose a hosting service:",
     "currentContent": [
       {
         "code": "FeHost",
         "id": 1,
         "name": "Netlify",
         "description": "Netlify is a simple and powerful hosting service for static sites, CI/CD workflows, and more.",
-        "image": "./netlify.png"
+        "image": "/./netlify.png"
       },
       {
         "code": "FeHost",
         "id": 2,
         "name": "Heroku",
         "description": "Heroku is a platform providing an easy way to deploy frontend and backend applications.",
-        "image": "./heroku.png"
+        "image": "/./heroku.png"
       },
       {
         "code": "FeHost",
         "id": 3,
         "name": "Vercel",
         "description": "Vercel is a service offering quick and easy deployment for frontend applications, especially Next.js apps.",
-        "image": "./vercel.png"
+        "image": "/./vercel.png"
       }
     ]
   },
 
   {
     "contentId": 4,
-    "info": "Choose backend language:",
+    "info": "Choose a backend language:",
     "currentContent": [
       {
         "code": "BeLang",
         "id": 1,
         "name": "JavaScript/Node.js",
         "description": "Javascript/Node.js is a popular language for backend development leveraging the V8 JavaScript engine. Node.js enables fast and scalable server development.",
-        "image": "./nodejs.png"
+        "image": "/./nodejs.png"
       },
       {
         "code": "BeLang",
         "id": 2,
         "name": "Python",
         "description": "Python is a versatile language widely used in backend development with frameworks like Django and Flask.",
-        "image": "./python.png"
+        "image": "/./python.png"
       },
       {
         "code": "BeLang",
         "id": 3,
         "name": "Java",
         "description": "Java is a Robust language used extensively in enterprise-level backend applications often with Spring Framework.",
-        "image": "./java.png"
+        "image": "/./java.png"
       }
     ]
   },
 
   {
     "contentId": 5,
-    "info": "Choose backend framework:",
+    "info": "Choose a backend framework:",
     "currentContent": [
       {
         "code": "BeFrame",
         "id": 1,
         "name": "Django",
         "description": "Django is a Python-based web framework for building secure and scalable web applications.",
-        "image": "./django.png"
+        "image": "/./django.png"
       },
       {
         "code": "BeFrame",
         "id": 2,
         "name": "Flask",
         "description": "Flask a lightweight Python web framework providing a flexible and easy way to build web apps.",
-        "image": "./flask.png"
+        "image": "/./flask.png"
       },
       {
         "code": "BeFrame",
         "id": 3,
         "name": "Express.js",
         "description": "Express.js is a lightweight and flexible web framework for Node.js, offering essential tools for backend development like routing and middleware features.",
-        "image": "./express.png"
+        "image": "/./express.png"
       }
     ]
   },
 
   {
     "contentId": 6,
-    "info": "Choose backend hosting service:",
+    "info": "Choose a backend hosting service:",
     "currentContent": [
       {
         "code": "BeHost",
         "id": 1,
         "name": "Heroku",
         "description": "Heroku is a platform offering an easy way to deploy both frontend and backend applications.",
-        "image": "./heroku.png"
+        "image": "/./heroku.png"
       },
       {
         "code": "BeHost",
         "id": 2,
         "name": "Amazon Web Services (AWS)",
         "description": "Amazon Web Services (AWS) is a cloud platform providing a wide range of services including EC2 (Elastic Compute Cloud) for hosting backend applications.",
-        "image": "./aws.png"
+        "image": "/./aws.png"
       },
       {
         "code": "BeHost",
         "id": 3,
         "name": "Microsoft Azure",
         "description": "Microsoft Azure is a cloud platform offering hosting services for various backend applications like Azure App Service.",
-        "image": "./azure.png"
+        "image": "/./azure.png"
       }
     ]
   },
 
   {
     "contentId": 7,
-    "info": "Choose database:",
+    "info": "Choose a database:",
     "currentContent": [
       {
         "code": "Databases",
         "id": 1,
         "name": "MySQL",
         "description": "MySQL is a relational database management system. It's commonly used in applications requiring structured data storage and complex relationships, such as e-commerce platforms, financial systems, and content management systems.",
-        "image": "./mysql.png"
+        "image": "/./mysql.png"
       },
       {
         "code": "Databases",
         "id": 2,
         "name": "PostgreSQL",
         "description": "PostgreSQL is an advanced open-source relational database. It's preferred for applications demanding robustness, extensibility, and support for complex queries and data types, often utilized in data warehousing, analytical workloads, and large-scale applications.",
-        "image": "./postgresql.png"
+        "image": "/./postgresql.png"
       },
       {
         "code": "Databases",
         "id": 3,
         "name": "MongoDB",
         "description": "MongoDB is a NoSQL document-oriented database system. It's typically used in projects handling unstructured or rapidly evolving data models, including real-time analytics, content management systems, and applications with high scalability requirements.",
-        "image": "./mongodb.png"
+        "image": "/./mongodb.png"
       }
     ]
   }

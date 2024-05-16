@@ -6,7 +6,7 @@ import React, { useState } from 'react';
 import jsonData from '../db/packy.json';
 
 import ProgressBar from './progressbar';
-import { info } from 'console';
+import Image from 'next/image';
 
 let currentContentId = 2;
 
@@ -14,9 +14,13 @@ let currentContentId = 2;
 interface Item {
   contentId: number;
   info: string;
-  currentContent: [
-    { code: string; id: number; name: string; description: string }
-  ];
+  currentContent: {
+    code: string;
+    id: number;
+    name: string;
+    description: string;
+    image: string;
+  }[];
 }
 
 //määritellään muuttuja parseData joka on tyyppiä Item[], sisältää item tyyppisiä objekteja
@@ -26,15 +30,18 @@ const parsedData: Item[] = jsonData as Item[];
 export default function ParsedDataComponent({ handleDatafromMinMap }: any) {
   let [currentDescription, setCurrentDescription] = useState('');
   let [currentlySelectedContent, setCurrentlySelectedContent] = useState({});
+  let [currentBackground, setCurrentBackground] = useState('');
 
   function selectOption(content: {
     id: number;
     name: string;
     description: string;
+    image: string;
   }): MouseEventHandler<HTMLButtonElement> {
     return (event) => {
       setCurrentlySelectedContent(content);
       setCurrentDescription(content.description);
+      setCurrentBackground(content.image);
 
       currentContentId = content.id;
       // console.log('id on minmapissa: ' + currentContentId);
@@ -44,6 +51,7 @@ export default function ParsedDataComponent({ handleDatafromMinMap }: any) {
   }
   const clearDescription = () => {
     setCurrentDescription(''); // Tyhjennä kuvaus
+    setCurrentBackground('');
   };
   // Nuolibutton
   let [currentStep, setCurrentStep] = useState(0);
@@ -76,26 +84,33 @@ export default function ParsedDataComponent({ handleDatafromMinMap }: any) {
           pbCurrentDescription={currentDescription}
           clearDesc={clearDescription}
         />
-        <ul className='flex flex-row  min-h-[50vh] justify-center w-[90vw] bg-slate-900'>
+        <ul className='flex flex-row min-h-[50vh] w-[95vw] mt-6 justify-center bg-slate-900 shadow-inner border-l-4 border-slate-800 border-t-4'>
           {data.map((item) => (
             <li key={item.currentContent[0].id}>
-              <h1>{item.info}</h1>
+              <h1 className='pl-4 '>{item.info}</h1>
               {item.currentContent.map((content, i) => (
                 <div key={content.id}>
-                  <div className='w-[50vw] h-full flex justify-evenly flex-row my-6'>
+                  <div className='w-[47vw] h-full flex justify-evenly flex-row my-2'>
                     <button
                       onClick={selectOption(content)}
-                      className=' w-96 hover:w-full font-bold border p-3 my-5 transition-all rounded-lg hover:bg-slate-200 hover:text-black hover:border-double hover:border-x-8 hover:border-slate-400 text-xl'
+                      className='z-10 w-96 hover:w-full font-bold border py-4 my-3 transition-all duration-500  rounded-lg hover:bg-slate-200 hover:text-black focus:text-emerald-500 hover:border-double hover:border-x-8 hover:border-slate-400 text-xl'
                     >
                       {content.name}
                     </button>
                   </div>
+                  <Image
+                    className='text-center content-center text-2xl absolute bottom-[33%] right-[14vw] opacity-30 h-[48vh] w-auto max-w-[48vw]'
+                    src={currentBackground}
+                    width={500}
+                    height={500}
+                    alt='Choose an option to view information'
+                  />
                 </div>
               ))}
             </li>
           ))}
-          <div className='[50vw]'>
-            <p className='flex bg-slate-800 w-[40vw] h-full mt-auto text-center justify-center'>
+          <div className='flex justify-center text-center border-r-4 mt-auto mb-auto border-slate-900 border-b-4 transition-all'>
+            <p className='flex items-center font-bold text-lg justify-center bg-black bg-opacity-40 z-10 w-[47vw] px-16 h-[50vh] mt-auto text-center'>
               {currentDescription}
             </p>
           </div>

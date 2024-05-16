@@ -51,13 +51,13 @@ function ProgressBar({ pbcurrentStep, pbsetCurrentStep, clearDesc }: any) {
       <div className='flex justify-between mt-2'>
         {' '}
         <button
-          className='absolute left-4 bottom-[50vh] h-20 w-20 rounded-full bg-emerald-500 text-white hover:bg-white hover:text-black transition-all hover:scale-125 duration-300'
+          className='z-50 absolute left-4 bottom-[50vh] h-20 w-20 rounded-full bg-emerald-500 text-white hover:bg-white hover:text-black transition-all hover:scale-125 duration-300'
           onClick={handlePreviousStep}
         >
           Previous
         </button>
         <button
-          className='absolute right-4 bottom-[50vh] h-20 w-20 rounded-full bg-emerald-500 text-white hover:bg-white hover:text-black transition-all hover:scale-125 duration-300'
+          className='z-50 absolute right-4 bottom-[50vh] h-20 w-20 rounded-full bg-emerald-500 text-white hover:bg-white hover:text-black transition-all hover:scale-125 duration-300'
           onClick={handleNextStep}
         >
           Next
