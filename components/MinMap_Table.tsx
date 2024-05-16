@@ -88,20 +88,20 @@ export default function ParsedDataComponent({
   //määritellään funktio renderData joka ottaa parametrikseen item[] tyyppisen data objektin
   function renderData(data: Item[]) {
     return (
-      <>
+      <main className='px-0 mx-[3.4rem]'>
         <ProgressBar
           pbcurrentStep={currentStep}
           pbsetCurrentStep={setCurrentStep}
           clearDesc={clearDescription}
           pbfinishSignal={setfinishSignal}
         />
-        <ul className='flex flex-row min-h-[50vh] w-[95vw] mt-6 justify-center bg-slate-900 shadow-inner border-l-4 border-slate-800 border-t-4'>
+        <ul className='flex flex-row min-h-[50vh] w-full mt-6 justify-center bg-slate-900 shadow-inner border-l-4 border-slate-800 border-t-4'>
           {data.map((item) => (
             <li key={item.currentContent[0].id}>
-              <h1 className='pl-4 '>{item.info}</h1>
+              <h2 className='pl-20 mt-3'>{item.info}</h2>
               {item.currentContent.map((content, i) => (
                 <div key={content.id}>
-                  <div className='w-[47vw] h-full flex justify-evenly flex-row my-2'>
+                  <div className='w-[50vw] h-full flex justify-evenly flex-row my-2'>
                     <button
                       onClick={selectOption(content)}
                       className='z-10 w-96 hover:w-full font-bold border py-4 my-3 transition-all duration-500  rounded-lg hover:bg-slate-200 hover:text-black focus:text-emerald-500 hover:border-double hover:border-x-8 hover:border-slate-400 text-xl'
@@ -121,12 +121,12 @@ export default function ParsedDataComponent({
             </li>
           ))}
           <div className='flex justify-center text-center border-r-4 mt-auto mb-auto border-slate-900 border-b-4 transition-all'>
-            <p className='flex items-center font-bold text-lg justify-center bg-black bg-opacity-40 z-10 w-[47vw] px-16 h-[50vh] mt-auto text-center'>
+            <p className='flex items-center font-bold text-lg justify-center bg-black bg-opacity-40 z-10 w-[50vw] px-16 h-[50vh] mt-auto text-center'>
               {currentDescription}
             </p>
           </div>
         </ul>
-      </>
+      </main>
     );
   }
   //funktio ParsedDataComponent() palauttaa objektin joka sisältää tiedot joita renderData funktio palauttaa

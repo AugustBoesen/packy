@@ -9,7 +9,7 @@ export default function Mindmap() {
     setCurrentContent(JSON.stringify(newContent));
   };
   return (
-    <main>
+    <>
       <>
         <Content
           currentContent={currentContent}
@@ -17,6 +17,6 @@ export default function Mindmap() {
         />
         <p className='bg-green-500'>{currentContent}</p>
       </>
-    </main>
+    </>
   );
 }
