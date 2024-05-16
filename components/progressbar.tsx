@@ -57,6 +57,7 @@ function ProgressBar({
       <div className="flex justify-between mt-2">
         {' '}
         <button
+          hidden={pbcurrentStep <= 0}
           className="z-50 absolute left-4 bottom-[50vh] h-20 w-20 rounded-full bg-emerald-500 text-white hover:bg-white hover:text-black transition-all hover:scale-125 duration-300"
           onClick={handlePreviousStep}
         >
