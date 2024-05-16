@@ -1,159 +1,231 @@
 [
   {
-    "code": "app",
-    "id": 1,
-    "name": "Web App",
-    "description": "This is a web app"
+    "contentId": 0,
+    "info": "Choose an application type",
+    "currentContent": [
+      {
+        "code": "AppType",
+        "id": 1,
+        "name": "Web App",
+        "description": "A web app can usually be accessed through internet browsers and require no initial installing from users",
+        "image": "/./webApp.png"
+      },
+      {
+        "code": "AppType",
+        "id": 2,
+        "name": "Mobile App",
+        "description": "Mobile apps can be primarily used in mobile platforms",
+        "image": "/./mobileApp.png"
+      },
+      {
+        "code": "AppType",
+        "id": 3,
+        "name": "Desktop App",
+        "description": "Desktop apps are usually installed for local usage",
+        "image": "/./desktopApp.png"
+      }
+    ]
   },
   {
-    "code": "app",
-    "id": 2,
-    "name": "Mobile App",
-    "description": "This is a mobile app"
-  },
-  {
-    "code": "app",
-    "id": 3,
-    "name": "Desktop App",
-    "description": "This is a desktop app"
-  },
-
-  {
-    "code": "FeLang",
-    "id": 1,
-    "name": "HTML",
-    "description": "Peruskieli, jota käytetään sivujen rakentamiseen ja sisällön merkitsemiseen."
-  },
-  {
-    "code": "FeLang",
-    "id": 2,
-    "name": "CSS",
-    "description": "Kieli, jota käytetään sivustojen tyylien ja ulkoasujen määrittämiseen."
-  },
-  {
-    "code": "FeLang",
-    "id": 3,
-    "name": "JavaScript",
-    "description": "Käyttöliittymäkieli, jota käytetään interaktiivisten elementtien lisäämiseen sivuille."
-  },
-  {
-    "code": "FeLang",
-    "id": 4,
-    "name": "TypeScript",
-    "description": "JavaScriptin supersetti, joka lisää staattisen tyypityksen ja muita ominaisuuksia JavaScriptiin. TypeScript tarjoaa parempaa koodin ennustettavuutta ja ylläpidettävyyttä suurissa projekteissa"
-  },
-
-  {
-    "code": "FeFrame",
-    "id": 1,
-    "name": "React.js",
-    "description": "Käyttäjäliittymän rakentamiseen kehitetty JavaScript-kirjasto, joka tarjoaa komponenttipohjaisen lähestymistavan."
-  },
-  {
-    "code": "FeFrame",
-    "id": 2,
-    "name": "Vue.js",
-    "description": "Progressiivinen JavaScript-kirjasto, joka on helppo oppia ja integroida muihin projekteihin, tarjoaa selkeän ja joustavan syntaksin"
-  },
-  {
-    "code": "FeFrame",
-    "id": 3,
-    "name": "Angular.js",
-    "description": "Kokonainen kehys sovellusten rakentamiseen, joka tarjoaa monipuoliset ominaisuudet, kuten komponentit, reititys ja tilanhallinta."
-  },
-
-  {
-    "code": "FeHost",
-    "id": 1,
-    "name": "Netlify",
-    "description": "Yksinkertainen ja tehokas hosting-palvelu, joka tarjoaa staattisten sivustojen hostingia, CI/CD-palveluita ja muita ominaisuuksia."
-  },
-  {
-    "code": "FeHost",
-    "id": 2,
-    "name": "Heroku",
-    "description": "Alusta, joka tarjoaa helpon tavan julkaista sekä frontend- että backend-sovelluksia."
-  },
-  {
-    "code": "FeHost",
-    "id": 3,
-    "name": "Vercel",
-    "description": "Palvelu, joka tarjoaa nopean ja helpon tavan julkaista frontend-sovelluksia, erityisesti Next.js-sovelluksia."
+    "contentId": 1,
+    "info": "Choose a code language:",
+    "currentContent": [
+      {
+        "code": "FeLang",
+        "id": 1,
+        "name": "Python",
+        "description": "Language used for scripting and automation.",
+        "image": "/./html.png"
+      },
+      {
+        "code": "FeLang",
+        "id": 2,
+        "name": "Assembly",
+        "description": "Are you insane?",
+        "image": "/./css.png"
+      },
+      {
+        "code": "FeLang",
+        "id": 3,
+        "name": "JavaScript",
+        "description": "Interactive language for adding dynamic elements to web pages.",
+        "image": "/./javascript.png"
+      },
+      {
+        "code": "FeLang",
+        "id": 4,
+        "name": "TypeScript",
+        "description": "Superset of JavaScript offering enhanced predictability and maintainability for large projects.",
+        "image": "/./typescript.png"
+      }
+    ]
   },
 
   {
-    "code": "BeLang",
-    "id": 1,
-    "name": "JavaScript/Node.js",
-    "description": "Suosittu kieli backend-kehityksessä, joka perustuu JavaScriptiin ja toimii V8 JavaScript -moottorilla. Node.js mahdollistaa nopean ja skaalautuvan serverin kehittämisen."
-  },
-  {
-    "code": "BeLang",
-    "id": 2,
-    "name": "Python",
-    "description": "Yleiskäyttöinen ohjelmointikieli, jota käytetään laajasti backend-sovellusten kehityksessä. Pythonilla on suuri määrä web-kehitykseen tarkoitettuja kehyksiä, kuten Django ja Flask."
-  },
-  {
-    "code": "BeLang",
-    "id": 3,
-    "name": "Java",
-    "description": "Tehokas ja monipuolinen ohjelmointikieli, jota käytetään laajasti yritystason backend-sovelluksissa. Java-kehitykseen käytetään usein Spring Frameworkia."
-  },
-
-  {
-    "code": "BeFrame",
-    "id": 1,
-    "name": "Django",
-    "description": "Python-pohjainen web-sovelluskehys, joka tarjoaa nopean ja tehokkaan tavan rakentaa turvallisia ja skaalautuvia web-sovelluksia."
-  },
-  {
-    "code": "BeFrame",
-    "id": 2,
-    "name": "Flask",
-    "description": "Kevyt Python-web-sovelluskehys, joka tarjoaa joustavan ja helpon tavan rakentaa web-sovelluksia"
-  },
-  {
-    "code": "BeFrame",
-    "id": 3,
-    "name": "Express.js",
-    "description": "Kevyt ja joustava web-sovelluskehys Node.js:lle. Express.js tarjoaa perustyökalut backend-sovellusten kehittämiseen, kuten reitityksen ja middleware-ominaisuudet."
+    "contentId": 2,
+    "info": "Choose a frontend framework",
+    "currentContent": [
+      {
+        "code": "FeFrame",
+        "id": 1,
+        "name": "React.js",
+        "description": "React.js is library for building user interfaces with a component-based approach.",
+        "image": "/./reactjs.png"
+      },
+      {
+        "code": "FeFrame",
+        "id": 2,
+        "name": "Vue.js",
+        "description": "Vue.js progressive JavaScript framework known for its simplicity and flexibility.",
+        "image": "/./vuejs.png"
+      },
+      {
+        "code": "FeFrame",
+        "id": 3,
+        "name": "Angular.js",
+        "description": "Angular.js is comprehensive framework for building applications with features like components, routing, and state management.",
+        "image": "/./angular.png"
+      }
+    ]
   },
 
   {
-    "code": "BeHost",
-    "id": 1,
-    "name": "Heroku",
-    "description": " Alusta, joka tarjoaa helpon tavan julkaista sekä frontend- että backend-sovelluksia."
-  },
-  {
-    "code": "BeHost",
-    "id": 2,
-    "name": "Amazon Web Services (AWS)",
-    "description": "Pilvipalvelualusta, joka tarjoaa laajan valikoiman palveluita, kuten EC2 (Elastic Compute Cloud) backend-sovellusten hostaamiseen."
-  },
-  {
-    "code": "BeHost",
-    "id": 3,
-    "name": "Microsoft Azure",
-    "description": "Pilvipalvelualusta, joka tarjoaa hosting-palveluita erilaisille backend-sovelluksille, kuten Azure App Service."
+    "contentId": 3,
+    "info": "Choose a hosting service:",
+    "currentContent": [
+      {
+        "code": "FeHost",
+        "id": 1,
+        "name": "Netlify",
+        "description": "Netlify is a simple and powerful hosting service for static sites, CI/CD workflows, and more.",
+        "image": "/./netlify.png"
+      },
+      {
+        "code": "FeHost",
+        "id": 2,
+        "name": "Heroku",
+        "description": "Heroku is a platform providing an easy way to deploy frontend and backend applications.",
+        "image": "/./heroku.png"
+      },
+      {
+        "code": "FeHost",
+        "id": 3,
+        "name": "Vercel",
+        "description": "Vercel is a service offering quick and easy deployment for frontend applications, especially Next.js apps.",
+        "image": "/./vercel.png"
+      }
+    ]
   },
 
   {
-    "code": "Databases",
-    "id": 1,
-    "name": "MySQL",
-    "description": "This is a MySQL database"
+    "contentId": 4,
+    "info": "Choose a backend language:",
+    "currentContent": [
+      {
+        "code": "BeLang",
+        "id": 1,
+        "name": "JavaScript/Node.js",
+        "description": "Javascript/Node.js is a popular language for backend development leveraging the V8 JavaScript engine. Node.js enables fast and scalable server development.",
+        "image": "/./nodejs.png"
+      },
+      {
+        "code": "BeLang",
+        "id": 2,
+        "name": "Python",
+        "description": "Python is a versatile language widely used in backend development with frameworks like Django and Flask.",
+        "image": "/./python.png"
+      },
+      {
+        "code": "BeLang",
+        "id": 3,
+        "name": "Java",
+        "description": "Java is a Robust language used extensively in enterprise-level backend applications often with Spring Framework.",
+        "image": "/./java.png"
+      }
+    ]
   },
+
   {
-    "code": "Databases",
-    "id": 2,
-    "name": "PostgreSQL",
-    "description": "This is a PostgreSQL database"
+    "contentId": 5,
+    "info": "Choose a backend framework:",
+    "currentContent": [
+      {
+        "code": "BeFrame",
+        "id": 1,
+        "name": "Django",
+        "description": "Django is a Python-based web framework for building secure and scalable web applications.",
+        "image": "/./django.png"
+      },
+      {
+        "code": "BeFrame",
+        "id": 2,
+        "name": "Flask",
+        "description": "Flask a lightweight Python web framework providing a flexible and easy way to build web apps.",
+        "image": "/./flask.png"
+      },
+      {
+        "code": "BeFrame",
+        "id": 3,
+        "name": "Express.js",
+        "description": "Express.js is a lightweight and flexible web framework for Node.js, offering essential tools for backend development like routing and middleware features.",
+        "image": "/./express.png"
+      }
+    ]
   },
+
   {
-    "code": "Databases",
-    "id": 3,
-    "name": "MongoDB",
-    "description": "This is a MongoDB database"
+    "contentId": 6,
+    "info": "Choose a backend hosting service:",
+    "currentContent": [
+      {
+        "code": "BeHost",
+        "id": 1,
+        "name": "Heroku",
+        "description": "Heroku is a platform offering an easy way to deploy both frontend and backend applications.",
+        "image": "/./heroku.png"
+      },
+      {
+        "code": "BeHost",
+        "id": 2,
+        "name": "Amazon Web Services (AWS)",
+        "description": "Amazon Web Services (AWS) is a cloud platform providing a wide range of services including EC2 (Elastic Compute Cloud) for hosting backend applications.",
+        "image": "/./aws.png"
+      },
+      {
+        "code": "BeHost",
+        "id": 3,
+        "name": "Microsoft Azure",
+        "description": "Microsoft Azure is a cloud platform offering hosting services for various backend applications like Azure App Service.",
+        "image": "/./azure.png"
+      }
+    ]
+  },
+
+  {
+    "contentId": 7,
+    "info": "Choose a database:",
+    "currentContent": [
+      {
+        "code": "Databases",
+        "id": 1,
+        "name": "MySQL",
+        "description": "MySQL is a relational database management system. It's commonly used in applications requiring structured data storage and complex relationships, such as e-commerce platforms, financial systems, and content management systems.",
+        "image": "/./mysql.png"
+      },
+      {
+        "code": "Databases",
+        "id": 2,
+        "name": "PostgreSQL",
+        "description": "PostgreSQL is an advanced open-source relational database. It's preferred for applications demanding robustness, extensibility, and support for complex queries and data types, often utilized in data warehousing, analytical workloads, and large-scale applications.",
+        "image": "/./postgresql.png"
+      },
+      {
+        "code": "Databases",
+        "id": 3,
+        "name": "MongoDB",
+        "description": "MongoDB is a NoSQL document-oriented database system. It's typically used in projects handling unstructured or rapidly evolving data models, including real-time analytics, content management systems, and applications with high scalability requirements.",
+        "image": "/./mongodb.png"
+      }
+    ]
   }
 ]

@@ -1,14 +1,21 @@
-//importoidaan toiminnallisuus MinMap_Tablesta
-import Modal from '../../components/MinMap_Table';
+'use client';
+import Content from '../../components/content';
+import { useState } from 'react';
+import ProgressBar from '@/components/progressbar';
 
-//määritellään ja exportataan funktio Mindmap()
 export default function Mindmap() {
-  //palauttaa reitille /mindmap toiminnallisuuden
+  const [currentContent, setCurrentContent] = useState('');
+  const handleContentChange = (newContent: Array<any>) => {
+    setCurrentContent(JSON.stringify(newContent));
+  };
   return (
     <main>
       <>
-        Aktuaalinen sovellus tähän
-        <Modal />
+        <Content
+          currentContent={currentContent}
+          setCurrentContent={handleContentChange}
+        />
+        <p className='bg-green-500'>{currentContent}</p>
       </>
     </main>
   );

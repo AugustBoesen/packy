@@ -1,57 +1,123 @@
+/* eslint-disable react-hooks/rules-of-hooks */
+'use client';
+import { MouseEventHandler } from 'react';
+import React, { useState } from 'react';
 //importoidaan data
 import jsonData from '../db/packy.json';
 
+import ProgressBar from './progressbar';
+import Image from 'next/image';
+
+let currentContentId = 2;
+
 //luodaan interface datan tietoja varten jossa data tyypitetään
 interface Item {
-  code: string;
-  id: number;
-  name: string;
-  description: string;
+  contentId: number;
+  info: string;
+  currentContent: {
+    code: string;
+    id: number;
+    name: string;
+    description: string;
+    image: string;
+  }[];
 }
 
 //määritellään muuttuja parseData joka on tyyppiä Item[], sisältää item tyyppisiä objekteja
 const parsedData: Item[] = jsonData as Item[];
 
-//luodaan funktio getItemByCode, joka on tyyppiä Item[], jonka parametriksi tulee string tyyppinen parametri
-function getItemByCode(code: string): Item[] {
-  //alustetaan Item[] tyyppinen tyhjä taulukko i
-  let i: Item[] = [];
-  //käydään läpi parsedData taulukon alkioiden code propertyt ja jos ne ovat samankaltaisia kuin 'app'
-  //ne pushataan i taulukkoon.
-  parsedData.forEach((item) => {
-    if (item.code === 'app') {
-      i.push(item);
-    }
-  });
-  //Lopuksi palautetaan i taulukko
-  return i;
-}
-
 //määritellään funktio ParsedDataComponent(), joka exportataan
-export default function ParsedDataComponent() {
+export default function ParsedDataComponent({ handleDatafromMinMap }: any) {
+  let [currentDescription, setCurrentDescription] = useState('');
+  let [currentlySelectedContent, setCurrentlySelectedContent] = useState({});
+  let [currentBackground, setCurrentBackground] = useState('');
+
+  function selectOption(content: {
+    id: number;
+    name: string;
+    description: string;
+    image: string;
+  }): MouseEventHandler<HTMLButtonElement> {
+    return (event) => {
+      setCurrentlySelectedContent(content);
+      setCurrentDescription(content.description);
+      setCurrentBackground(content.image);
+
+      currentContentId = content.id;
+      // console.log('id on minmapissa: ' + currentContentId);
+      // console.log(JSON.stringify(content)); // Pass content directly
+      handleDatafromMinMap(content); // Pass content here
+    };
+  }
+  const clearDescription = () => {
+    setCurrentDescription(''); // Tyhjennä kuvaus
+    setCurrentBackground('');
+  };
+  // Nuolibutton
+  let [currentStep, setCurrentStep] = useState(0);
+  // Tässä määritellään tila missä progres bar on ja se käytää useStatea ja se alkaa tilasta 1
+  //luodaan funktio getItemByCode, joka on tyyppiä Item[], jonka parametriksi tulee string tyyppinen parametri
+  function getItemByCode(code: string): Item[] {
+    //alustetaan Item[] tyyppinen tyhjä taulukko i
+    let i: Item[] = [];
+    //käydään läpi parsedData taulukon alkioiden code propertyt ja jos ne ovat samankaltaisia kuin 'app'
+    //ne pushataan i taulukkoon.
+    parsedData.forEach((item) => {
+      // Item.contentId:tä verrataan numeroon, joka saadaan määritteenä mindmapin page.tsx:stä
+      if (item.contentId === currentStep) {
+        i.push(item);
+      }
+    });
+    //Lopuksi palautetaan i taulukko
+    return i;
+  }
+
   //määritellään muuttuja app, joka sisältää funktion getItemByCoden palautusarvon
   const app = getItemByCode('app');
-
   //määritellään funktio renderData joka ottaa parametrikseen item[] tyyppisen data objektin
   function renderData(data: Item[]) {
-    //funktio palauttaa listan jokaisen nimen ja descriptionin data parametrista
     return (
-      <ul>
-        {data.map((item) => (
-          <li key={item.id}>
-            <strong>{item.name}</strong>
-            <br />
-            <strong>{item.description}</strong>
-          </li>
-        ))}
-      </ul>
+      <>
+        <ProgressBar
+          pbcurrentStep={currentStep}
+          pbsetCurrentStep={setCurrentStep}
+          pbCurrentDescription={currentDescription}
+          clearDesc={clearDescription}
+        />
+        <ul className='flex flex-row min-h-[50vh] w-[95vw] mt-6 justify-center bg-slate-900 shadow-inner border-l-4 border-slate-800 border-t-4'>
+          {data.map((item) => (
+            <li key={item.currentContent[0].id}>
+              <h1 className='pl-4 '>{item.info}</h1>
+              {item.currentContent.map((content, i) => (
+                <div key={content.id}>
+                  <div className='w-[47vw] h-full flex justify-evenly flex-row my-2'>
+                    <button
+                      onClick={selectOption(content)}
+                      className='z-10 w-96 hover:w-full font-bold border py-4 my-3 transition-all duration-500  rounded-lg hover:bg-slate-200 hover:text-black focus:text-emerald-500 hover:border-double hover:border-x-8 hover:border-slate-400 text-xl'
+                    >
+                      {content.name}
+                    </button>
+                  </div>
+                  <Image
+                    className='text-center content-center text-2xl absolute bottom-[33%] right-[14vw] opacity-30 h-[48vh] w-auto max-w-[48vw]'
+                    src={currentBackground}
+                    width={500}
+                    height={500}
+                    alt='Choose an option to view information'
+                  />
+                </div>
+              ))}
+            </li>
+          ))}
+          <div className='flex justify-center text-center border-r-4 mt-auto mb-auto border-slate-900 border-b-4 transition-all'>
+            <p className='flex items-center font-bold text-lg justify-center bg-black bg-opacity-40 z-10 w-[47vw] px-16 h-[50vh] mt-auto text-center'>
+              {currentDescription}
+            </p>
+          </div>
+        </ul>
+      </>
     );
   }
   //funktio ParsedDataComponent() palauttaa objektin joka sisältää tiedot joita renderData funktio palauttaa
-  return (
-    <div>
-      <h1>Application type</h1>
-      {app && renderData(app)}
-    </div>
-  );
+  return <div>{app && renderData(app)}</div>;
 }
