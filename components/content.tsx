@@ -41,7 +41,10 @@ export default function Content({ setCurrentContent }: any) {
 
   return (
     <div>
-      <Modal handleDatafromMinMap={handleDatafromMinMap} />
+      <Modal
+        handleDatafromMinMap={handleDatafromMinMap}
+        mmfinishSignal={setfinishSignal}
+      />
       <div className="flex w-full justify-center text-center rounded-fullh-24">
         <button
           className="rounded-full z-50 h-32 w-32 -mt-80 font-bold bg-teal-500 hover:scale-125 transition-all duration-500 border hover:border-dashed hover:border-slate-300 hover:bg-teal-200 hover:text-black"
