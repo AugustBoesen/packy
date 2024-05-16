@@ -15,7 +15,6 @@ export default function Mindmap() {
           currentContent={currentContent}
           setCurrentContent={handleContentChange}
         />
-        <p className='bg-green-500'>{currentContent}</p>
       </>
     </>
   );
