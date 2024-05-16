@@ -6,21 +6,16 @@ import toast from 'react-hot-toast';
 let chosenArray: any[] = [];
 
 export let correctAmount: boolean = false;
-let finishSignal: boolean = false;
 
-console.log('finishSignal: ' + finishSignal);
 export function setCorrectAmount(value: boolean) {
   correctAmount = value;
 }
-console.log(correctAmount);
-
-function setfinishSignal() {
-  // tähän voi laittaa filttereä
-  finishSignal = true;
-  console.log('finishSignal: ' + finishSignal);
-}
 
 export default function Content({ setCurrentContent }: any) {
+  const [finishSignal, setFinishSignal] = useState(false);
+  function setfinishSignal() {
+    setFinishSignal(true);
+  }
   const [datafromMinMap, setDatafromMinMap] = useState([]);
   const handleDatafromMinMap = (newDatafromMinMap: any) => {
     setDatafromMinMap(newDatafromMinMap);
@@ -61,6 +56,23 @@ export default function Content({ setCurrentContent }: any) {
           Add to plan
         </button>
       </div>
+      {finishSignal == true && (
+        <ul className='absolute h-[80vh] w-full bg-slate-800 top-[10vh] z-[60] px-6'>
+          <h3 className='pt-4'>Chosen tools:</h3>
+          {chosenArray.map((item, index) => (
+            <>
+              <div className='border-t flex flex-row mt-6'>
+                <li className='font-bold shadow-inner min-w-40' key={index}>
+                  {item.name}
+                </li>
+                <li className='shadow-inner' key={index}>
+                  {item.description}
+                </li>
+              </div>
+            </>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }
