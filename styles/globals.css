@@ -19,7 +19,7 @@ h2 {
 }
 
 h3 {
-  @apply text-3xl pb-3 pt-1;
+  @apply text-3xl pb-3;
 }
 
 p {

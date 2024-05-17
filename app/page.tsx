@@ -25,12 +25,12 @@ export default function Index() {
   return (
     <main className="flex-row">
       <div className="flex flex-col pr-6 md:w-[50vw] justify-center">
-        <h1 className="absolute font-bold blur-xl -z-10 top-32 opacity-100">
+        <h2 className="absolute font-bold blur-xl -z-10 top-32 opacity-100">
           {greeting}
-        </h1>
-        <h1 className="font-bold bg-gradient-to-r from-emerald-400 via-green-200 to-indigo-200 inline-block text-transparent bg-clip-text">
+        </h2>
+        <h2 className="font-bold bg-gradient-to-r from-emerald-400 via-green-200 to-indigo-200 inline-block text-transparent bg-clip-text">
           {greeting}
-        </h1>
+        </h2>
 
         <p className="w-[26rem]">
           Nowadays, grasping the scope of modern application development can be
@@ -45,9 +45,9 @@ export default function Index() {
           application, taking into account both essential and quality-of-life
           tools.
         </p>
-        <h2 className="mb-[3vh] text-center w-full italic bg-gradient-to-r from-emerald-400 via-green-200 to-indigo-200 inline-block text-transparent bg-clip-text">
+        <h3 className="mb-[1vh] text-center w-full italic bg-gradient-to-r from-emerald-400 via-green-200 to-indigo-200 inline-block text-transparent bg-clip-text">
           Shape your vision.
-        </h2>
+        </h3>
         <Link
           className="indexbtn bg-emerald-500 hover:bg-emerald-200"
           href="/mindmap"
