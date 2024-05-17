@@ -1,3 +1,6 @@
+//app/mindmap/page.tsx saa tiedot muilta komponenteilta ja näyttää tiedot
+//käyttöliittymässä
+
 'use client';
 import Content from '../../components/content';
 import { useState } from 'react';

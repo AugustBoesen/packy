@@ -1,3 +1,5 @@
+// layout.tsx sisältää metadatan ja Rootlayoutin Packylle ja exportoi ne applikaatioon
+
 import type { Metadata } from 'next';
 import { Montserrat } from 'next/font/google';
 import '../styles/globals.css';
@@ -23,13 +25,13 @@ export default function RootLayout({
         <Header />
         <Image
           src={'/mainbg.jpg'}
-          alt='mainbg'
+          alt="mainbg"
           width={1920}
           height={1080}
-          className='blur-3xl opacity-50 absolute -z-50 max-h-[90vh]'
+          className="blur-3xl opacity-50 absolute -z-50 max-h-[90vh]"
         />
         <Toaster
-          position='top-center'
+          position="top-center"
           toastOptions={{ className: 'mt-64 z-50' }}
         />
         {children}

@@ -1,3 +1,5 @@
+//app/about/page.tsx sisältää about käyttöliittymän datan
+
 import Image from 'next/image';
 export default function About() {
   return (
