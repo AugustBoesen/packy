@@ -13,7 +13,7 @@ function ProgressBar({
   // Tässä määritellään tila missä progres bar on ja se käytää useStatea ja se alkaa tilasta 1
 
   const maxSteps = 7; // Tämä muuttuja määrittää monta steppiä on yhteensä
-  const barSteps = maxSteps - 1;
+  const barSteps = maxSteps - 1; // sama mutta joissakin kohdissa tarvitaan tätä ettö kaikki menee oikein
 
   const handleNextStep = () => {
     // tänä fucktio lisää yhden SetCurrenStep muttujaan ja pitää huolen että se ei ylitä maximia
@@ -30,7 +30,7 @@ function ProgressBar({
   const circles = Array.from({ length: maxSteps }, (_, index) => index + 1);
 
   return (
-    // pallojne ja baarin div
+    // pallojen ja baarin div
     <div className=" w-full flex flex-col">
       {/* tästä alkaa pallojen div */}
       <div className=" flex -mb-6 w-full justify-between">
@@ -56,6 +56,7 @@ function ProgressBar({
       </div>
       <div className="flex justify-between mt-2">
         {' '}
+        {/* nappula jolla mennään taakse päin progress barissa*/}
         <button
           hidden={pbcurrentStep <= 0}
           className="z-50 absolute left-4 bottom-[50vh] h-20 w-20 rounded-full bg-emerald-500 text-white hover:bg-white hover:text-black transition-all hover:scale-125 duration-300"
@@ -63,6 +64,7 @@ function ProgressBar({
         >
           Previous
         </button>
+        {/* nappula joka vaihtaa pääsivun näkymää eli tuo uuden tiedon ja siirtää progress baria eteenpäin */}
         <button
           hidden={correctAmount === false}
           className="z-50 absolute right-4 bottom-[50vh] h-20 w-20 rounded-full bg-emerald-500 text-white hover:bg-white hover:text-black transition-all hover:scale-125 duration-300"
