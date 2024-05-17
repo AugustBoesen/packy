@@ -1,3 +1,6 @@
+//Komponentti sisältää Packyn päätoiminnallisuudet ja välittää tietoa content komponenttiin
+//eteenpäin vietäväksi
+
 /* eslint-disable react-hooks/rules-of-hooks */
 'use client';
 import { MouseEventHandler } from 'react';
